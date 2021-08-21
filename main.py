@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import base64
 
-st.image("trginslogo.png")
+# st.image("trginslogo.png")
 
 st.title("Rate Analysis")
 
@@ -17,8 +17,8 @@ st.title("Rate Analysis")
 
 # pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
 
-with st.expander("Expand Rate Data"):
-    st.markdown('<meta name="viewport" content="width=device-width, initial-scale=1.0"> <iframe src="http://127.0.0.1:8887/output%20(1).html" width="700" height="1000" type="application/pdf"></iframe>', unsafe_allow_html=True)
+# with st.expander("Expand Rate Data"):
+#     st.markdown('<meta name="viewport" content="width=device-width, initial-scale=1.0"> <iframe src="http://127.0.0.1:8887/output%20(1).html" width="700" height="1000" type="application/pdf"></iframe>', unsafe_allow_html=True)
 
 # displayPDF("http://127.0.0.1:8887/CivilDAR_2019_Vol_1.pdf")
 
