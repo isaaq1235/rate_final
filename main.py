@@ -16,9 +16,8 @@ def run_query(query):
 
 sheet_url = st.secrets["public_gsheets_url"]
 rows = run_query(f'SELECT * FROM "{sheet_url}"')
-upd_test = run_query(f'UPDATE {sheet_url} 
-SET Quantity = 0.90
-WHERE Code = 0295;')
+
+run_query(f'UPDATE {sheet_url} SET Quantity = 0.90WHERE Code = 0295;')
 
 # Print results.
 for row in rows:
