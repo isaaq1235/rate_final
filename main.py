@@ -6,7 +6,7 @@ st.title('Rate Analysis')
 
 @st.cache(allow_output_mutation=True, hash_funcs={"_thread.RLock": lambda _: None})
 def init_connection():
-    return psycopg2.connect(**st.secrets["postgres"])
+    return psycopg2.connect(host = "localhost",port = 5432,dbname = "rate_analysis",user = "postgres",password = "isaaq2021")
 
 con = init_connection()
 
