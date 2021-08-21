@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import base64
 # from gsheetsdb import connect
+from shillelagh.backends.apsw.db import connect
 
 # Create a connection object.
 con = connect()
@@ -16,6 +17,7 @@ query = UPDATE "https://docs.google.com/spreadsheets/d/1PWqKLsvgNzPVCD5JtItApB6f
 SET Quantity = 0.90 
 WHERE Code = 0295
 
+con.execute(query)
 
 # def run_query(query):
 #     rows = con.execute(query, headers=1)
