@@ -19,11 +19,10 @@ rows = run_query(f'SELECT * FROM "{sheet_url}"')
 
 # Print results.
 for row in rows:
-    for i in range(1, 7):
-        cols = st.columns(6)
-        cols[0].write(f"{row.Code}")
-        cols[1].write(f"{row.Description}")
-        cols[2].write(f"{row.Unit}")
-        cols[3].write(f"{row.Quantity}")
-        cols[4].write(f"{row.Rate}")
-        cols[5].write(f"{row.Amount}")
+    cols = st.columns(6)
+    cols[0].write(f"{row.Code}")
+    cols[1].write(f"{row.Description}")
+    cols[2].write(f"{row.Unit}")
+    cols[3].write(f"{row.Quantity}")
+    cols[4].write(f"{row.Rate}")
+    cols[5].write(f"{row.Amount}")
