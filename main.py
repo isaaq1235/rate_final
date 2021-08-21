@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-
+import psycopg2
 
 st.title('Rate Analysis')
 
