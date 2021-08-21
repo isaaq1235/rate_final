@@ -19,9 +19,11 @@ rows = run_query(f'SELECT * FROM "{sheet_url}"')
 
 # Print results.
 for row in rows:
-    st.write(f"{row.Code}")
-    st.write(f"{row.Description}")
-    st.write(f"{row.Unit}")
-    st.write(f"{row.Quantity}")
-    st.write(f"{row.Rate}")
-    st.write(f"{row.Amount}")
+    for i in range(1, 7):
+        cols = st.beta_columns(i)
+        cols[0] = st.write(f"{row.Code}")
+        cols[1] = st.write(f"{row.Description}")
+        cols[2] = st.write(f"{row.Unit}")
+        cols[3] = st.write(f"{row.Quantity}")
+        cols[4] = st.write(f"{row.Rate}")
+        cols[5] = st.write(f"{row.Amount}")
