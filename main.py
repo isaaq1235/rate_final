@@ -9,7 +9,7 @@ con = connect()
 
 # Perform SQL query on the Google Sheet.
 # Uses st.cache to only rerun when the query changes or after 10 min.
-@st.cache(ttl=600)
+# @st.cache(ttl=600)
 def run_query(query):
     rows = con.execute(query, headers=1)
     return rows
@@ -23,5 +23,5 @@ for row in rows:
     st.write(f"{row.Description}")
     st.write(f"{row.Unit}")
     st.write(f"{row.Quantity}")
-#     st.write(f"{row.Rate}")
+    st.write(f"{row.Rate}")
     st.write(f"{row.Amount}")
