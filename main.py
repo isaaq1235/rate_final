@@ -20,7 +20,7 @@ rows = run_query(f'SELECT * FROM "{sheet_url}"')
 # Print results.
 for row in rows:
     for i in range(1, 7):
-        cols = st.columns(i)
+        cols = st.columns(6)
         cols[0] = st.write(f"{row.Code}")
         cols[1] = st.write(f"{row.Description}")
         cols[2] = st.write(f"{row.Unit}")
