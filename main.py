@@ -13,11 +13,11 @@ cursor = con.cursor()
 # Perform SQL query on the Google Sheet.
 # Uses st.cache to only rerun when the query changes or after 10 min.
 # @st.cache(ttl=600)
-query = UPDATE "https://docs.google.com/spreadsheets/d/1PWqKLsvgNzPVCD5JtItApB6fw_TNxvolojd5e1N2ll0/edit?usp=sharing"
+
+con.execute(UPDATE "https://docs.google.com/spreadsheets/d/1PWqKLsvgNzPVCD5JtItApB6fw_TNxvolojd5e1N2ll0/edit?usp=sharing"
 SET Quantity = 0.90 
 WHERE Code = 0295
-
-con.execute(query)
+)
 
 # def run_query(query):
 #     rows = con.execute(query, headers=1)
