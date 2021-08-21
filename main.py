@@ -6,7 +6,7 @@ import base64
 from shillelagh.backends.apsw.db import connect
 
 # Create a connection object.
-con = connect(:memory:)
+con = connect(":memory:")
 
 cursor = con.cursor()
 
