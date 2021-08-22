@@ -5,18 +5,13 @@ import mysql.connector
 # Uses st.cache to only run once.
 # @st.cache(allow_output_mutation=True, hash_funcs={"_thread.RLock": lambda _: None})
 
-conn = mysql.connector.connect(host = '127.0.0.1',port = 3306,user = 'root',password = 'isaaq2021')
+conn = mysql.connector.connect(host = "localhost", user = 'root',password = 'isaaq2021',database='rate_analysis')
 
-# Perform query.
-# Uses st.cache to only rerun when the query changes or after 10 min.
-# @st.cache(ttl=600)
-def run_query(query):
-    with conn.cursor() as cur:
-        cur.execute(query)
-        return cur.fetchall()
+# conn.execute("select * from rate_data;")
 
-rows = run_query("SELECT * from rate_data;")
+cur = conn.cursor()
 
-# Print results.
-for row in rows:
-    st.write(f"{row[0]}")
+cur.execute("select * from rate_data")
+
+for i in cur:
+    st.write(i)
