@@ -4,10 +4,8 @@ import mysql.connector
 # Initialize connection.
 # Uses st.cache to only run once.
 # @st.cache(allow_output_mutation=True, hash_funcs={"_thread.RLock": lambda _: None})
-def init_connection():
-    return mysql.connector.connect(host = 'localhost',port = 3306,user = 'root',password = 'isaaq2021')
 
-conn = init_connection()
+conn = mysql.connector.connect(host = 'localhost',port = 3306,user = 'root',password = 'isaaq2021')
 
 # Perform query.
 # Uses st.cache to only rerun when the query changes or after 10 min.
