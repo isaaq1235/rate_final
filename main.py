@@ -5,7 +5,7 @@ import mysql.connector
 # Uses st.cache to only run once.
 # @st.cache(allow_output_mutation=True, hash_funcs={"_thread.RLock": lambda _: None})
 def init_connection():
-    return mysql.connector.connect(**st.secrets["mysql"])
+    return mysql.connector.connect(host = 'localhost',port = 3306,user = 'root',password = 'isaaq2021')
 
 conn = init_connection()
 
